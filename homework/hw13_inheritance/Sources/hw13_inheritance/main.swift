@@ -25,7 +25,8 @@ class SpecialCustomer: Customer {
 
 }
 let unknownUser = User()
-unknownUser.greeting()                              /// Greeting tempUser
+unknownUser.greeting()                              
+/// Greeting tempUser
 
 let unknownCustomer = Customer()
 unknownCustomer.username = "abcd"                   
@@ -67,20 +68,68 @@ class SpecialStudent: Student {
     }
 }
 
+/* This class won't work because override property must have
+setter or getter
+class LazyStudent: Student {
+    override var grade = 1.0
+}
+
+// This class won't work because super.grade is mutable 
+but this override property is read-only(non-mutable)
+class LazyStudent : Student {
+    override var grade: Double {
+        get { super.grade * 0.1 }
+    }
+}
+*/
+
 let someSpecialStudent = SpecialStudent()
 print(someSpecialStudent.grade)     /// 3.5
 someSpecialStudent.grade = 0.5
 print(someSpecialStudent.grade)     /// 4.0
 
 print("=============== Overriding Property Observers ===============")
-print("=============== Defining a base class ===============")
-print("=============== Defining a base class ===============")
-print("=============== Defining a base class ===============")
-print("=============== Defining a base class ===============")
-print("=============== Defining a base class ===============")
-print("=============== Defining a base class ===============")
+class ObservedStudent: Student {
+    override var grade: Double {
+        willSet(newGrade) {
+            print("Update grade to \(newGrade)")
+        }
+        didSet {
+            if grade > 3.5 {
+                print("Grade A!")
+            } else {
+                print("Not Grade A!")
+            }
 
-print("=============== Defining a base class ===============")
-print("=============== Defining a base class ===============")
-print("=============== Defining a base class ===============")
-print("=============== Defining a base class ===============")
+        }
+    }
+}
+let someObservedStudent = ObservedStudent()
+someObservedStudent.grade = 3.5
+/// Upgrade grade to 3.5
+/// Not Grade A!
+
+print("=============== Preventing Overrides ===============")
+class FinalStudent: Student {
+    override final var grade: Double {
+        willSet(newGrade) {
+            print("Updating grade...")
+        }
+        didSet {
+            print("Grade is updated.")
+        }
+    }
+}
+
+/* This class cant override final property
+class FinalFinalStudent: FinalStudent {
+    override final var grade: Double {
+        willSet(newGrade) {
+            print("This class won't work anyway")
+        }
+        didSet {
+            print("Whatever this is")
+        }
+    }
+}
+*/
