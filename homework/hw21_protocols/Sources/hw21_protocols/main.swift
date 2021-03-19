@@ -18,9 +18,6 @@ print("=============== Protocol requirements ===============")
 //     var someString: String
 // }
 
-protocol ConstInt {
-    let someInt: Int { get }
-}
 protocol NoNeedForSet {
     var someInt: Int { get }
 }
@@ -46,9 +43,4 @@ print("=============== Method requirements ===============")
 protocol Incrementing {
     static var someInt: Int { get }
     static func increment() -> ()
-}
-class IncrementIntA: Incrementing {
-    static var someInt: Int { return self.someInt }
-    static func increment() { someInt = someInt + 1 }
-    init(someInt: Int) { self.someInt = someInt }
 }
