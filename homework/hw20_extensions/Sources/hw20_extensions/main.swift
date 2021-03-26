@@ -2,7 +2,7 @@
 //=================================================================================================================
 print("=============== Extension syntax ===============")
 // extension SomeType: SomeProtocol, AnotherProtocol {
-//     **add some new functionality**    
+//     **add some new functionality**
 // }
 
 print("=============== Computed properties from extensions ===============")
