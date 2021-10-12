@@ -105,10 +105,10 @@ print(LoginAttempt.loginCount)                                      // 2
 
 print("=============== Defer statements ===============")
 func bruteforcePassword(startWith base: UInt) {
+    var baseNumber = base
     defer {
         print("Password is \(baseNumber)")
     }
-    var baseNumber = base
     while (try? LoginAttempt(username: "admin", password: String(baseNumber))) == nil {
         baseNumber = baseNumber + 1
     }
