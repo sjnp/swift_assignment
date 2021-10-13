@@ -27,6 +27,9 @@
 // import Foundation
 // import FoundationNetworking
 // import Swift
+
+// // this part of code is from:
+// // https://github.com/carlosbanos85/URLSession-AsyncAwait-Linux/blob/main/Sources/URLSession-AsyncAwait-Linux/URLSession_AsyncAwait_Linux.swift
 // public extension URLSession {
 //     enum URLSessionError: Error {
 //         case unknownError
@@ -58,6 +61,13 @@
 //     return data1
 // }
 
-// Task{ try await fetch() }
+// print("hello")
+// Task.detached { 
+//     let url = URL(string: "https://hws.dev/scores.json")!
+//     print("let me in!!!")
+//     let (res, _) = try await URLSession.shared.data(from: url)
+//     print(res)
+// }
+// print("bye")
 
 // PROBLEM: async-await cannot be start within `Task {}`
