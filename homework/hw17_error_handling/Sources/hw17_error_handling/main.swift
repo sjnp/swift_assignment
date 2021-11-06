@@ -113,4 +113,4 @@ func bruteforcePassword(startWith base: UInt) {
         baseNumber = baseNumber + 1
     }
 }
-bruteforcePassword(startWith: 1000)      // Password is 1234   
+bruteforcePassword(startWith: 1)      // Password is 1234   
