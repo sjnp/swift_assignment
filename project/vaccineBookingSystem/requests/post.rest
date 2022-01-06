@@ -1,0 +1,58 @@
+POST http://localhost:8080/api/persons
+Content-Type: application/json
+
+{
+    "name": "Alice",
+    "id": "1",
+    "age": 84,
+    "weight": 55,
+    "height": 1.64,
+}
+
+###
+POST http://localhost:8080/api/persons
+Content-Type: application/json
+
+{
+    "name": "Bob",
+    "id": "2",
+    "age": 24,
+    "weight": 55,
+    "height": 1.64,
+}
+
+###
+POST http://localhost:8080/api/persons
+Content-Type: application/json
+
+{
+    "name": "Cathy",
+    "id": "3",
+    "age": 24,
+    "weight": 55,
+    "height": 1.64,
+    "medicalJob": "Doctor"
+}
+###
+POST http://localhost:8080/api/persons
+Content-Type: application/json
+
+{
+    "name": "Dave",
+    "id": "4",
+    "age": 79,
+    "weight": 105,
+    "height": 1.64,
+}
+
+###
+POST http://localhost:8080/api/persons
+Content-Type: application/json
+
+{
+    "name": "Eve",
+    "id": "5",
+    "age": 39,
+    "weight": 105,
+    "height": 1.64,
+}
